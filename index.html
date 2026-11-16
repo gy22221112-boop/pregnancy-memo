@@ -1,0 +1,1035 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Близость и здоровые привычки при беременности — 12 и 16–20 недель</title>
+<style>
+  :root {
+    --bg: #fff7f5; --ink: #3a2a33; --muted: #7c6a73;
+    --rose: #e8789b; --rose-dark: #b8386a;
+    --peach: #ffd9c9; --lilac: #e9defa;
+    --mint: #d9f2e6; --mint-ink: #1f6b4a;
+    --warn-bg: #ffe4e4; --warn-ink: #a12a2a;
+    --sky: #dcecff; --sky-ink: #2a5a96;
+    --card: #ffffff;
+    --tab-bg: #ffffff; --tab-active: #b8386a; --tab-active-ink: #fff;
+    --good-bg: #e6f7ee; --good-ink: #1f6b4a;
+    --yellow-bg: #fff4d6; --yellow-ink: #8a5a00;
+    --red-bg: #ffe1e1; --red-ink: #a12a2a;
+    --green-bg: #e6f7ee; --green-ink: #1f6b4a;
+    --acc-border: color-mix(in srgb, var(--ink) 14%, transparent);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1f1619; --ink: #f4e6ea; --muted: #c9b5bd; --card: #2b2023;
+      --peach: #4a3029; --lilac: #34294a; --mint: #1f3a2e; --mint-ink: #8fe0b8;
+      --warn-bg: #4a2023; --warn-ink: #ffa6a6; --sky: #1f3047; --sky-ink: #9cc8ff;
+      --rose: #f08aab; --rose-dark: #f6a4bf;
+      --tab-bg: #2b2023; --tab-active: #f08aab; --tab-active-ink: #1f1619;
+      --good-bg: #1f3a2e; --good-ink: #8fe0b8;
+      --yellow-bg: #3a2e12; --yellow-ink: #ffd27a;
+      --red-bg: #4a2023; --red-ink: #ffa6a6;
+      --green-bg: #1f3a2e; --green-ink: #8fe0b8;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+  }
+  .wrap { max-width: 680px; margin: 0 auto; padding: 0 16px 48px; }
+
+  /* ===== Верхняя панель ===== */
+  .topbar {
+    position: sticky; top: 0; z-index: 20;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid color-mix(in srgb, var(--ink) 12%, transparent);
+    padding: 8px 16px;
+  }
+  .topbar-inner {
+    max-width: 680px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    flex-wrap: wrap;
+  }
+  .clock {
+    font-variant-numeric: tabular-nums;
+    font-size: .82rem; color: var(--muted);
+    display: flex; align-items: center; gap: 6px; white-space: nowrap;
+  }
+  .clock .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--rose-dark); display: inline-block;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.35} }
+  .tabs { display: flex; gap: 6px; flex-wrap: wrap; }
+  .tab {
+    border: 1px solid color-mix(in srgb, var(--ink) 18%, transparent);
+    background: var(--tab-bg); color: var(--ink);
+    padding: 7px 14px; border-radius: 999px; cursor: pointer;
+    font: inherit; font-size: .82rem; font-weight: 600;
+    transition: background .25s, color .25s, border-color .25s, transform .15s;
+  }
+  .tab:hover { border-color: var(--rose-dark); }
+  .tab:focus-visible { outline: 3px solid var(--rose-dark); outline-offset: 2px; }
+  .tab[aria-selected="true"] {
+    background: var(--tab-active); color: var(--tab-active-ink);
+    border-color: var(--tab-active);
+  }
+
+  /* ===== Переходы ===== */
+  .page { display: none; }
+  .page.active { display: block; animation: pageIn .4s ease both; }
+  @keyframes pageIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .page.active { animation: none; }
+    .clock .dot { animation: none; }
+    .tab { transition: none; }
+    .acc-body { transition: none !important; }
+  }
+
+  /* Hero */
+  .hero {
+    position: relative; overflow: hidden;
+    background: linear-gradient(160deg, #ffc2d4 0%, #ffd9c9 45%, #e9defa 100%);
+    border-radius: 0 0 36px 36px; padding: 40px 24px 56px; text-align: center;
+    margin: 0 -16px 24px;
+  }
+  @media (prefers-color-scheme: dark) {
+    .hero { background: linear-gradient(160deg, #5a2a40 0%, #4a3029 50%, #34294a 100%); }
+  }
+  .hero svg.deco { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+  .badge {
+    display: inline-block; background: rgba(255,255,255,.7); color: var(--rose-dark);
+    padding: 6px 16px; border-radius: 999px; font-weight: 600; font-size: .85rem; letter-spacing: .03em;
+  }
+  @media (prefers-color-scheme: dark) { .badge { background: rgba(0,0,0,.35); } }
+  .hero h1 { font-size: 1.9rem; line-height: 1.2; margin: 16px 0 8px; position: relative; }
+  .hero p { margin: 0; color: var(--muted); position: relative; }
+  .hero .week { position: relative; margin: 18px auto 0; width: 96px; height: 96px; }
+
+  .answer {
+    background: var(--card); border-radius: 24px; padding: 22px;
+    box-shadow: 0 8px 24px rgba(184,56,106,.12); margin-top: -40px; position: relative;
+    display: flex; gap: 16px; align-items: flex-start;
+  }
+  .answer .yes {
+    flex: none; width: 56px; height: 56px; border-radius: 50%;
+    background: var(--mint); color: var(--mint-ink); display: grid; place-items: center; font-size: 28px;
+  }
+  .answer h2 { margin: 0 0 4px; font-size: 1.25rem; }
+  .answer p { margin: 0; color: var(--muted); }
+
+  .shield { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 16px; }
+  .shield div {
+    background: var(--lilac); border-radius: 18px; padding: 14px 8px; text-align: center; font-size: .82rem;
+  }
+  .shield b { display: block; font-size: 1.6rem; margin-bottom: 2px; }
+
+  /* ===== Аккордеон ===== */
+  .acc { margin-top: 24px; border-radius: 20px; background: var(--card); box-shadow: 0 4px 14px rgba(0,0,0,.05); overflow: hidden; }
+  .acc + .acc { margin-top: 12px; }
+  .acc-head {
+    width: 100%; display: flex; align-items: center; gap: 10px;
+    background: none; border: 0; padding: 14px 16px; cursor: pointer;
+    font: inherit; font-size: 1.05rem; font-weight: 600; color: var(--ink); text-align: left;
+    transition: background .2s;
+  }
+  .acc-head:hover { background: color-mix(in srgb, var(--ink) 5%, transparent); }
+  .acc-head:focus-visible { outline: 3px solid var(--rose-dark); outline-offset: -3px; }
+  .acc-head .ic {
+    width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; font-size: 17px; flex: none;
+  }
+  .acc-head .chev {
+    margin-left: auto; transition: transform .3s; font-size: 1.1rem; color: var(--muted); flex: none;
+  }
+  .acc-head[aria-expanded="true"] .chev { transform: rotate(180deg); }
+  .acc-body {
+    display: grid; grid-template-rows: 0fr;
+    transition: grid-template-rows .3s ease;
+  }
+  .acc-head[aria-expanded="true"] + .acc-body { grid-template-rows: 1fr; }
+  .acc-body > .acc-inner { overflow: hidden; }
+  .acc-body .acc-pad { padding: 0 16px 16px; }
+
+  h3.sec { display: none; } /* старые заголовки скрыты, используются аккордеоны */
+
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 420px) { .grid { grid-template-columns: 1fr; } }
+  .tile {
+    background: var(--bg); border-radius: 16px; padding: 14px;
+    border: 1px solid var(--acc-border);
+  }
+  .tile .e { font-size: 1.6rem; }
+  .tile b { display: block; margin: 4px 0 2px; font-size: .95rem; }
+  .tile small { color: var(--muted); font-size: .85rem; }
+
+  .warn { background: var(--warn-bg); color: var(--warn-ink); border-radius: 18px; padding: 16px 18px; }
+  .warn ul { margin: 8px 0 0; padding-left: 0; list-style: none; }
+  .warn li { padding: 6px 0 6px 28px; position: relative; border-top: 1px dashed rgba(161,42,42,.25); font-size: .92rem; }
+  .warn li:first-child { border-top: 0; }
+  .warn li::before { content: "⚠️"; position: absolute; left: 0; top: 6px; font-size: .9rem; }
+
+  .tips { background: var(--sky); color: var(--sky-ink); border-radius: 18px; padding: 16px 18px; }
+  .tips ul { margin: 0; padding-left: 0; list-style: none; }
+  .tips li { padding: 7px 0 7px 28px; position: relative; font-size: .92rem; }
+  .tips li::before { content: "💡"; position: absolute; left: 0; top: 7px; }
+
+  .poses { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .pose { background: var(--bg); border-radius: 16px; padding: 12px 6px; text-align: center; border: 1px solid var(--acc-border); font-size: .8rem; }
+  .pose svg { width: 54px; height: 54px; display: block; margin: 0 auto 4px; }
+
+  .urgent {
+    margin-top: 24px; background: linear-gradient(135deg, #e8566f, #c8365a); color: #fff;
+    border-radius: 22px; padding: 20px; display: flex; gap: 14px; align-items: center;
+  }
+  .urgent .big { font-size: 2rem; }
+  .urgent b { display: block; font-size: 1.05rem; margin-bottom: 2px; }
+
+  .habit {
+    background: var(--bg); border-radius: 16px; padding: 14px 16px; margin-bottom: 10px;
+    border: 1px solid var(--acc-border);
+    display: flex; gap: 12px; align-items: flex-start;
+  }
+  .habit:last-child { margin-bottom: 0; }
+  .habit .he {
+    flex: none; width: 40px; height: 40px; border-radius: 12px;
+    background: var(--good-bg); color: var(--good-ink);
+    display: grid; place-items: center; font-size: 1.3rem;
+  }
+  .habit h4 { margin: 0 0 4px; font-size: .98rem; }
+  .habit p { margin: 0; color: var(--muted); font-size: .88rem; }
+  .habit ul { margin: 6px 0 0; padding-left: 18px; color: var(--muted); font-size: .88rem; }
+  .habit ul li { margin: 3px 0; }
+
+  .sleep { background: linear-gradient(135deg, var(--lilac), var(--sky)); border-radius: 18px; padding: 16px; }
+  .sleep h4 { margin: 0 0 8px; font-size: 1rem; }
+  .sleep .srow { display: flex; gap: 10px; align-items: flex-start; padding: 7px 0; }
+  .sleep .srow .se { flex: none; font-size: 1.2rem; }
+  .sleep .srow p { margin: 0; font-size: .9rem; }
+
+  .plate { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  @media (max-width: 420px) { .plate { grid-template-columns: 1fr; } }
+  .plate div {
+    background: var(--bg); border-radius: 14px; padding: 10px 12px;
+    font-size: .86rem; border-left: 4px solid var(--good-ink); border: 1px solid var(--acc-border); border-left-width: 4px; border-left-color: var(--good-ink);
+  }
+  .plate b { display: block; margin-bottom: 2px; }
+
+  /* ===== Витамины ===== */
+  .vit { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  @media (max-width: 420px) { .vit { grid-template-columns: 1fr; } }
+  .vit div {
+    background: var(--bg); border-radius: 14px; padding: 10px 12px;
+    font-size: .86rem; border: 1px solid var(--acc-border);
+    border-left: 4px solid var(--mint-ink);
+  }
+  .vit b { display: block; margin-bottom: 2px; font-size: .92rem; }
+  .vit small { color: var(--muted); font-size: .82rem; }
+
+  /* ===== Анализы с чекбоксами ===== */
+  .tests { margin-top: 12px; }
+  .tests-head {
+    display: flex; align-items: center; justify-content: space-between; gap: 10px;
+    flex-wrap: wrap; margin-bottom: 8px;
+  }
+  .tests-head h4 { margin: 0; font-size: .98rem; }
+  .prog {
+    font-size: .78rem; color: var(--muted); font-variant-numeric: tabular-nums;
+  }
+  .prog-bar {
+    height: 6px; border-radius: 999px; background: color-mix(in srgb, var(--ink) 12%, transparent);
+    overflow: hidden; margin: 0 0 10px;
+  }
+  .prog-bar > i {
+    display: block; height: 100%; width: 0%; border-radius: 999px;
+    background: linear-gradient(90deg, var(--mint-ink), var(--rose-dark));
+    transition: width .35s ease;
+  }
+  .test-list { list-style: none; margin: 0; padding: 0; }
+  .test-list li {
+    display: flex; align-items: flex-start; gap: 10px;
+    padding: 8px 0; border-top: 1px solid var(--acc-border); font-size: .9rem;
+  }
+  .test-list li:first-child { border-top: 0; }
+  .test-list input[type="checkbox"] {
+    width: 20px; height: 20px; flex: none; margin-top: 2px; accent-color: var(--mint-ink);
+    cursor: pointer;
+  }
+  .test-list input[type="checkbox"]:focus-visible { outline: 3px solid var(--rose-dark); outline-offset: 2px; }
+  .test-list label { cursor: pointer; color: var(--ink); }
+  .test-list li.done label { text-decoration: line-through; color: var(--muted); }
+  .reset {
+    margin-top: 10px; border: 1px solid var(--acc-border); background: var(--bg);
+    color: var(--muted); padding: 6px 12px; border-radius: 999px; cursor: pointer;
+    font: inherit; font-size: .78rem;
+  }
+  .reset:hover { color: var(--ink); border-color: var(--rose-dark); }
+  .reset:focus-visible { outline: 3px solid var(--rose-dark); outline-offset: 2px; }
+
+  /* ===== Когда звонить врачу ===== */
+  .call { display: grid; gap: 10px; }
+  .call .level {
+    display: flex; gap: 12px; align-items: flex-start;
+    padding: 12px; border-radius: 14px;
+  }
+  .call .level .le { flex: none; font-size: 1.3rem; }
+  .call .level b { display: block; margin-bottom: 2px; font-size: .95rem; }
+  .call .level ul { margin: 4px 0 0; padding-left: 18px; font-size: .86rem; }
+  .call .level li { margin: 2px 0; }
+  .call .green { background: var(--green-bg); color: var(--green-ink); }
+  .call .yellow { background: var(--yellow-bg); color: var(--yellow-ink); }
+  .call .red { background: var(--red-bg); color: var(--red-ink); }
+  .call .phones {
+    margin-top: 4px; font-size: .84rem; color: var(--muted);
+    border-top: 1px dashed var(--acc-border); padding-top: 10px;
+  }
+  .call .phones b { color: var(--ink); }
+
+  .foot { margin-top: 28px; text-align: center; font-size: .8rem; color: var(--muted); }
+
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+
+  /* ===== Печать ===== */
+  @media print {
+    :root {
+      --bg:#fff; --ink:#000; --muted:#333; --card:#fff; --rose:#000; --rose-dark:#000;
+      --peach:#f0f0f0; --lilac:#f0f0f0; --mint:#f0f0f0; --mint-ink:#000;
+      --warn-bg:#f5f5f5; --warn-ink:#000; --sky:#f0f0f0; --sky-ink:#000;
+      --good-bg:#f0f0f0; --good-ink:#000;
+      --yellow-bg:#f5f5f5; --yellow-ink:#000;
+      --red-bg:#f5f5f5; --red-ink:#000;
+      --green-bg:#f5f5f5; --green-ink:#000;
+      --acc-border:#ccc;
+    }
+    body { background:#fff; color:#000; }
+    .topbar, .hero svg.deco, .hero .week, .reset { display: none !important; }
+    .hero { background:#fff !important; border-radius:0; padding:20px 0; margin-bottom:10px; }
+    .badge { background:#eee !important; color:#000 !important; border:1px solid #999; }
+    .acc { box-shadow:none !important; border:1px solid #ccc; break-inside:avoid; }
+    /* печать: все аккордеоны раскрыты */
+    .acc-body { grid-template-rows: 1fr !important; }
+    .acc-head .chev { display: none; }
+    .answer, .tile, .pose, .shield div, .warn, .tips, .urgent, .habit, .plate div, .vit div, .call, .call .level {
+      box-shadow:none !important; border:1px solid #ccc; break-inside:avoid;
+    }
+    .sleep { background:#f5f5f5 !important; border:1px solid #ccc; }
+    .urgent { background:#fff !important; color:#000 !important; border:2px solid #000; }
+    .urgent .big { color:#000; }
+    .grid, .poses, .shield, .plate, .vit { break-inside:avoid; }
+    .foot { color:#000; }
+    a { color:#000; text-decoration:underline; }
+    .page { display:block !important; animation:none !important; }
+    .page + .page { break-before: page; }
+    .test-list input { accent-color:#000; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="clock" aria-live="off" aria-label="Текущее время">
+      <span class="dot" aria-hidden="true"></span>
+      <span id="clock">--:--:--</span>
+    </div>
+    <div class="tabs" role="tablist" aria-label="Выбор недели беременности">
+      <button class="tab" role="tab" id="tab-week12" aria-controls="week12" aria-selected="true">12 недель</button>
+      <button class="tab" role="tab" id="tab-week16" aria-controls="week16" aria-selected="false" tabindex="-1">16–20 недель</button>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- ==================== СТРАНИЦА: 12 НЕДЕЛЬ ==================== -->
+  <section class="page active" id="week12" role="tabpanel" aria-labelledby="tab-week12">
+    <header class="hero">
+      <svg class="deco" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <g fill="#fff" opacity=".45">
+          <circle cx="40" cy="50" r="38"/><circle cx="370" cy="30" r="52"/><circle cx="350" cy="260" r="30"/><circle cx="30" cy="250" r="22"/>
+        </g>
+        <g fill="#e8789b" opacity=".55">
+          <path d="M70 120c-6-10-22-6-22 7 0 12 22 24 22 24s22-12 22-24c0-13-16-17-22-7z"/>
+          <path d="M335 140c-5-8-18-5-18 6 0 10 18 20 18 20s18-10 18-20c0-11-13-14-18-6z"/>
+        </g>
+      </svg>
+      <span class="badge">12 неделя беременности</span>
+      <h1>Близость при беременности</h1>
+      <p>Коротко: можно ли, чем полезно и когда осторожнее</p>
+      <svg class="week" viewBox="0 0 96 96" aria-hidden="true">
+        <circle cx="48" cy="48" r="44" fill="#fff" opacity=".8"/>
+        <circle cx="48" cy="48" r="44" fill="none" stroke="#e8789b" stroke-width="5" stroke-dasharray="276" stroke-dashoffset="190" stroke-linecap="round" transform="rotate(-90 48 48)"/>
+        <text x="48" y="52" text-anchor="middle" font-size="30" font-weight="700" fill="#b8386a" font-family="sans-serif">12</text>
+        <text x="48" y="70" text-anchor="middle" font-size="11" fill="#7c6a73" font-family="sans-serif">недель</text>
+      </svg>
+    </header>
+
+    <section class="answer" role="note">
+      <div class="yes" aria-hidden="true">✓</div>
+      <div>
+        <h2>Да, можно</h2>
+        <p>При нормально протекающей беременности секс безопасен. Проникновение и оргазм малышу не вредят.</p>
+      </div>
+    </section>
+
+    <div class="shield">
+      <div><b aria-hidden="true">💧</b>Плодный пузырь с водами</div>
+      <div><b aria-hidden="true">💪</b>Плотные мышцы матки</div>
+      <div><b aria-hidden="true">🛡️</b>Слизистая пробка шейки</div>
+    </div>
+
+    <!-- Аккордеон: Чем полезно -->
+    <div class="acc">
+      <button class="acc-head" aria-expanded="false" aria-controls="acc12-benefit">
+        <span class="ic" style="background:var(--mint)" aria-hidden="true">🌿</span>
+        Чем это полезно
+        <span class="chev" aria-hidden="true">▾</span>
+      </button>
+      <div class="acc-body" id="acc12-benefit">
+        <div class="acc-inner"><div class="acc-pad">
+          <div class="grid">
+            <div class="tile"><div class="e" aria-hidden="true">😌</div><b>Меньше стресса</b><small>Эндорфины и окситоцин улучшают настроение и снижают тревожность</small></div>
+            <div class="tile"><div class="e" aria-hidden="true">💞</div><b>Больше близости</b><small>Укрепляет эмоциональную связь с партнёром</small></div>
+            <div class="tile"><div class="e" aria-hidden="true">🏋️‍♀️</div><b>Тренировка мышц</b><small>Мышцы тазового дна становятся крепче, это пригодится в родах</small></div>
+            <div class="tile"><div class="e" aria-hidden="true">🩸</div><b>Кровообращение</b><small>Улучшается приток крови в области таза</small></div>
+            <div class="tile"><div class="e" aria-hidden="true">😴</div><b>Крепче сон</b><small>Расслабление помогает лучше спать</small></div>
+            <div class="tile"><div class="e" aria-hidden="true">🌸</div><b>Хорошее самочувствие</b><small>Приятное напоминание, что тело работает и радует</small></div>
+          </div>
+        </div></div>
+      </div>
+    </div>
+
+    <!-- Аккордеон: Когда нельзя (открыт по умолчанию) -->
+    <div class="acc">
+      <button class="acc-head" aria-expanded="true" aria-controls="acc12-warn">
+        <span class="ic" style="background:var(--warn-bg)" aria-hidden="true">🚫</span>
+        Когда нельзя
+        <span class="chev" aria-hidden="true">▾</span>
+      </button>
+      <div class="acc-body" id="acc12-warn">
+        <div class="acc-inner"><div class="acc-pad">
+          <div class="warn">
+            <b>Сначала проконсультируйтесь с врачом, если есть:</b>
+            <ul>
+              <li>Кровянистые выделения или кровотечение</li>
+              <li>Угроза выкидыша или прерывания беременности в анамнезе</li>
+              <li>Предлежание плаценты</li>
+              <li>Подтекание или излитие околоплодных вод</li>
+              <li>Истмико-цервикальная недостаточность</li>
+              <li>Боли внизу живота, тянущие боли, тонус матки</li>
+              <li>Инфекции половых путей у вас или партнёра (до лечения)</li>
+            </ul>
+          </div>
+        </div></div>
+      </div>
+    </div>
+
+    <!-- Аккордеон: Позы -->
+    <div class="acc">
+      <button class="acc-head" aria-expanded="false" aria-controls="acc12-poses">
+        <span class="ic" style="background:var(--lilac)" aria-hidden="true">🛋️</span>
+        Удобные позы
+        <span class="chev" aria-hidden="true">▾</span>
+      </button>
+      <div class="acc-body" id="acc12-poses">
+        <div class="acc-inner"><div class="acc-pad">
+          <div class="poses">
+            <div class="pose">
+              <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="18" fill="#e9defa"/><path d="M14 40c8-10 22-10 36 0" stroke="#b8386a" stroke-width="5" fill="none" stroke-linecap="round"/><circle cx="16" cy="36" r="5" fill="#e8789b"/></svg>
+              На боку «ложечкой»
+            </div>
+            <div class="pose">
+              <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="18" fill="#ffd9c9"/><circle cx="32" cy="22" r="7" fill="#e8789b"/><path d="M20 46c4-12 20-12 24 0" stroke="#b8386a" stroke-width="5" fill="none" stroke-linecap="round"/></svg>
+              Женщина сверху
+            </div>
+            <div class="pose">
+              <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="18" fill="#d9f2e6"/><circle cx="26" cy="22" r="6" fill="#e8789b"/><path d="M26 30v12h16" stroke="#1f6b4a" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Сидя
+            </div>
+          </div>
+        </div></div>
+      </div>
+    </div>
+
+    <!-- Аккордеон: Советы -->
+    <div class="acc">
+      <button class="acc-head" aria-expanded="false" aria-controls="acc12-tips">
+        <span class="ic" style="background:var(--sky)" aria-hidden="true">💡</span>
+        Практические советы
+        <span class="chev" aria-hidden="true">▾</span>
+      </button>
+      <div class="acc-body" id="acc12-tips">
+        <div class="acc-inner"><div class="acc-pad">
+          <div class="tips">
+            <ul>
+              <li>Выбирайте позы без давления на живот</li>
+              <li>При дискомфорте лучше остановиться</li>
+              <li>Небольшие мажущие выделения после секса бывают из-за чувствительности шейки матки, но сообщите о них врачу</li>
+              <li>При риске инфекций используйте презерватив</li>
+              <li>Сниженное желание в первом триместре нормально (токсикоз, усталость); во втором триместре у многих оно возвращается</li>
+            </ul>
+          </div>
+        </div></div>
+      </div>
+    </div>
+
+    <!-- Аккордеон: Здоровые привычки -->
+    <div class="acc">
+      <button class="acc-head" aria-expanded="false" aria-controls="acc12-habits">
+        <span class="ic" style="background:var(--good-bg)" aria-hidden="true">🥗</span>
+        Здоровые привычки
+        <span class="chev" aria-hidden="true">▾</span>
+      </button>
+      <div class="acc-body" id="acc12-habits">
+        <div class="acc-inner"><div class="acc-pad">
+          <div class="habit">
+            <div class="he" aria-hidden="true">🍽️</div>
+            <div>
+              <h4>Правильное питание</h4>
+              <p>Питайтесь разнообразно и регулярно — 4–5 раз в день небольшими порциями.</p>
+              <ul>
+                <li>Основа — овощи, фрукты, цельные злаки, бобовые</li>
+                <li>Белок: яйца, рыба, мясо, творог, бобовые</li>
+                <li>Фолиевая кислота, железо, кальций — по назначению врача</li>
+                <li>Ограничьте сладкое, фастфуд, крепкий кофе (до 1–2 чашек)</li>
+                <li>Полностью исключите алкоголь и сырые продукты риска</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="habit">
+            <div class="he" aria-hidden="true">💧</div>
+            <div>
+              <h4>Вода и напитки</h4>
+              <p>Пейте 1,5–2 л чистой воды в день, ориентируйтесь на жажду.</p>
+              <ul>
+                <li>Избегайте сладких газировок и энергетиков</li>
+                <li>Кофе и чай — умеренно, не на голодный желудок</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="sleep">
+            <h4>😴 Как правильно спать</h4>
+            <div class="srow"><span class="se" aria-hidden="true">🛏️</span><p>Спите <b>7–9 часов</b>, старайтесь ложиться и вставать в одно и то же время.</p></div>
+            <div class="srow"><span class="se" aria-hidden="true">🛌</span><p>С 16–20 недель <b>не спите на спине</b> — растущая матка давит на нижнюю полую вену. Оптимально — <b>на левом боку</b>.</p></div>
+            <div class="srow"><span class="se" aria-hidden="true">🧸</span><p>Подложите подушку <b>между коленями</b> и под живот — это снимет нагрузку с поясницы.</p></div>
+            <div class="srow"><span class="se" aria-hidden="true">🌙</span><p>За час до сна — без экранов, яркого света и кофеина; проветрите комнату.</p></div>
+            <div class="srow"><span class="se" aria-hidden="true">🚻</span><p>Ночные подъёмы в туалет — норма; не пейте много жидкости прямо перед сном.</p></div>
+          </div>
+        </div></div>
+      </div>
+    </div>
+
+    <!-- Аккордеон: Витамины и анализы (с чекбоксами) -->
+    <div class="acc">
+      <button class="acc-head" aria-expanded="false" aria-controls="acc12-vit">
+        <span class="ic" style="background:var(--mint)" aria-hidden="true">💊</span>
+        Витамины и анализы
+        <span class="chev" aria-hidden="true">▾</span>
+      </button>
+      <div class="acc-body" id="acc12-vit">
+        <div class="acc-inner"><div class="acc-pad">
+          <div class="vit">
+            <div><b>Фолиевая кислота</b><small>400–800 мкг/сут, особенно важна в 1-м триместре</small></div>
+            <div><b>Витамин D</b><small>Обычно 400–1000 МЕ/сут, по назначению врача</small></div>
+            <div><b>Железо</b><small>При анемии — по результатам анализа крови</small></div>
+            <div><b>Кальций</b><small>По потребности, часто с витамином D</small></div>
+            <div><b>Йод</b><small>Обычно 150–200 мкг/сут, если нет противопоказаний</small></div>
+            <div><b>DHA (омега-3)</b><small>200–300 мг/сут — для развития мозга малыша</small></div>
+          </div>
+
+          <div class="tests" data-key="tests-week12">
+            <div class="tests-head">
+              <h4>Плановые анализы на 12 неделе</h4>
+              <span class="prog" data-prog>0 / 0</span>
+            </div>
+            <div class="prog-bar" aria-hidden="true"><i data-bar></i></div>
+            <ul class="test-list">
+              <li><input type="checkbox" id="t12-1"><label for="t12-1">Первый скрининг: УЗИ + биохимия (PAPP-A, β-ХГЧ)</label></li>
+              <li><input type="checkbox" id="t12-2"><label for="t12-2">Общий анализ крови, группа крови и резус-фактор</label></li>
+              <li><input type="checkbox" id="t12-3"><label for="t12-3">Общий анализ мочи</label></li>
+              <li><input type="checkbox" id="t12-4"><label for="t12-4">Инфекции: ВИЧ, гепатиты B и C, сифилис</label></li>
+              <li><input type="checkbox" id="t12-5"><label for="t12-5">Мазок на флору и инфекции половых путей</label></li>
+              <li><input type="checkbox" id="t12-6"><label for="t12-6">ТТГ и антитела к ТПО (по показаниям)</label></li>
+            </ul>
+            <button class="reset" type="button" data-reset>Сбросить отметки</button>
+          </div>
+        </div></div>
+      </div>
+    </div>
+
+    <!-- Аккордеон: Когда звонить врачу (открыт по умолчанию) -->
+    <div class="acc">
+      <button class="acc-head" aria-expanded="true" aria-controls="acc12-call">
+        <span class="ic" style="background:var(--red-bg)" aria-hidden="true">📞</span>
+        Когда звонить врачу
+        <span class="chev" aria-hidden="true">▾</span>
+      </button>
+      <div class="acc-body" id="acc12-call">
+        <div class="acc-inner"><div class="acc-pad">
+          <div class="call">
+            <div class="level green">
+              <span class="le" aria-hidden="true">🟢</span>
+              <div>
+                <b>Плановый вопрос</b>
+                <ul>
+                  <li>Расшифровка анализов, витамины, питание</li>
+                  <li>Лёгкая тошнота, изжога, запоры</li>
+                  <li>Вопросы про режим, сон, движение</li>
+                </ul>
+              </div>
+            </div>
+            <div class="level yellow">
+              <span class="le" aria-hidden="true">🟡</span>
+              <div>
+                <b>Срочно в течение дня</b>
+                <ul>
+                  <li>Температура ≥ 37,5 °C</li>
+                  <li>Сильная рвота, обезвоживание</li>
+                  <li>Боли при мочеиспускании</li>
+                  <li>Зуд, жжение, необычные выделения</li>
+                  <li>Отёки лица или рук</li>
+                </ul>
+              </div>
+            </div>
+            <div class="level red">
+              <span class="le" aria-hidden="true">🔴</span>
+              <div>
+                <b>Скорая помощь</b>
+                <ul>
+                  <li>Кровотечение из влагалища</li>
+                  <li>Резкая боль внизу живота</li>
+                  <li>Подтекание или излитие вод</li>
+                  <li>Потеря сознания, сильная слабость</li>
+                  <li>Судороги, сильная головная боль с нарушением зрения</li>
+                </ul>
+              </div>
+            </div>
+            <div class="phones">
+              <b>Телефоны:</b> приёмное отделение — <b>___</b>, скорая — <b>103</b>, врач — <b>___</b>
+            </div>
+          </div>
+        </div></div>
+      </div>
+    </div>
+
+    <div class="urgent" role="alert">
+      <div class="big" aria-hidden="true">🚑</div>
+      <div><b>Срочно к врачу</b>Боль, кровь или жидкие выделения из влагалища</div>
+    </div>
+
+    <p class="foot">Материал справочный и не заменяет консультацию врача, ведущего вашу беременность. 🌷</p>
+  </section>
+
+  <!-- ==================== СТРАНИЦА: 16–20 НЕДЕЛЬ ==================== -->
+  <section class="page" id="week16" role="tabpanel" aria-labelledby="tab-week16">
+    <header class="hero">
+      <svg class="deco" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <g fill="#fff" opacity=".45">
+          <circle cx="40" cy="50" r="38"/><circle cx="370" cy="30" r="52"/><circle cx="350" cy="260" r="30"/><circle cx="30" cy="250" r="22"/>
+        </g>
+        <g fill="#e8789b" opacity=".55">
+          <path d="M70 120c-6-10-22-6-22 7 0 12 22 24 22 24s22-12 22-24c0-13-16-17-22-7z"/>
+          <path d="M335 140c-5-8-18-5-18 6 0 10 18 20 18 20s18-10 18-20c0-11-13-14-18-6z"/>
+        </g>
+      </svg>
+      <span class="badge">16–20 недель беременности</span>
+      <h1>Близость при беременности</h1>
+      <p>Второй триместр: можно ли, чем полезно и когда осторожнее</p>
+      <svg class="week" viewBox="0 0 96 96" aria-hidden="true">
+        <circle cx="48" cy="48" r="44" fill="#fff" opacity=".8"/>
+        <circle cx="48" cy="48" r="44" fill="none" stroke="#e8789b" stroke-width="5" stroke-dasharray="276" stroke-dashoffset="190" stroke-linecap="round" transform="rotate(-90 48 48)"/>
+        <text x="48" y="48" text-anchor="middle" font-size="20" font-weight="700" fill="#b8386a" font-family="sans-serif">16–20</text>
+        <text x="48" y="68" text-anchor="middle" font-size="11" fill="#7c6a73" font-family="sans-serif">недель</text>
+      </svg>
+    </header>
+
+    <section class="answer" role="note">
+      <div class="yes" aria-hidden="true">✓</div>
+      <div>
+        <h2>Да, можно</h2>
+        <p>При нормально протекающей беременности секс безопасен. Проникновение и оргазм малышу не вредят. Во втором триместре животик ещё небольшой — это удобное время.</p>
+      </div>
+    </section>
+
+    <div class="shield">
+      <div><b aria-hidden="true">💧</b>Плодный пузырь с водами</div>
+      <div><b aria-hidden="true">💪</b>Плотные мышцы матки</div>
+      <div><b aria-hidden="true">🛡️</b>Слизистая пробка шейки</div>
+    </div>
+
+    <div class="acc">
+      <button class="acc-head" aria-expanded="false" aria-controls="acc16-benefit">
+        <span class="ic" style="background:var(--mint)" aria-hidden="true">🌿</span>
+        Чем это полезно
+        <span class="chev" aria-hidden="true">▾</span>
+      </button>
+      <div class="acc-body" id="acc16-benefit">
+        <div class="acc-inner"><div class="acc-pad">
+          <div class="grid">
+            <div class="tile"><div class="e" aria-hidden="true">😌</div><b>Меньше стресса</b><small>Эндорфины и окситоцин улучшают настроение и снижают тревожность</small></div>
+            <div class="tile"><div class="e" aria-hidden="true">💞</div><b>Больше близости</b><small>Укрепляет эмоциональную связь с партнёром</small></div>
+            <div class="tile"><div class="e" aria-hidden="true">🌸</div><b>Ярче ощущения</b><small>Усиленный приток крови к тазу повышает чувствительность и либидо — многие женщины во втором триместре отмечают более яркие ощущения</small></div>
+            <div class="tile"><div class="e" aria-hidden="true">🔥</div><b>Возвращение желания</b><small>Токсикоз отступает, силы возвращаются — либидо нередко повышается по сравнению с первым триместром</small></div>
+            <div class="tile"><div class="e" aria-hidden="true">😴</div><b>Крепче сон</b><small>Расслабление помогает лучше спать</small></div>
+            <div class="tile"><div class="e" aria-hidden="true">🌷</div><b>Хорошее самочувствие</b><small>Приятное напоминание, что тело работает и радует</small></div>
+          </div>
+        </div></div>
+      </div>
+    </div>
+
+    <div class="acc">
+      <button class="acc-head" aria-expanded="true" aria-controls="acc16-warn">
+        <span class="ic" style="background:var(--warn-bg)" aria-hidden="true">🚫</span>
+        Когда нельзя
+        <span class="chev" aria-hidden="true">▾</span>
+      </button>
+      <div class="acc-body" id="acc16-warn">
+        <div class="acc-inner"><div class="acc-pad">
+          <div class="warn">
+            <b>Сначала проконсультируйтесь с врачом, если есть:</b>
+            <ul>
+              <li>Кровянистые выделения или кровотечение</li>
+              <li>Угроза выкидыша или прерывания беременности в анамнезе</li>
+              <li>Предлежание плаценты</li>
+              <li>Подтекание или излитие околоплодных вод</li>
+              <li>Истмико-цервикальная недостаточность</li>
+              <li>Боли внизу живота, тянущие боли, тонус матки</li>
+              <li>Инфекции половых путей у вас или партнёра (до лечения)</li>
+            </ul>
+          </div>
+        </div></div>
+      </div>
+    </div>
+
+    <div class="acc">
+      <button class="acc-head" aria-expanded="false" aria-controls="acc16-poses">
+        <span class="ic" style="background:var(--lilac)" aria-hidden="true">🛋️</span>
+        Удобные позы
+        <span class="chev" aria-hidden="true">▾</span>
+      </button>
+      <div class="acc-body" id="acc16-poses">
+        <div class="acc-inner"><div class="acc-pad">
+          <div class="poses">
+            <div class="pose">
+              <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="18" fill="#e9defa"/><path d="M14 40c8-10 22-10 36 0" stroke="#b8386a" stroke-width="5" fill="none" stroke-linecap="round"/><circle cx="16" cy="36" r="5" fill="#e8789b"/></svg>
+              На боку «ложечкой»
+            </div>
+            <div class="pose">
+              <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="18" fill="#ffd9c9"/><circle cx="32" cy="22" r="7" fill="#e8789b"/><path d="M20 46c4-12 20-12 24 0" stroke="#b8386a" stroke-width="5" fill="none" stroke-linecap="round"/></svg>
+              Женщина сверху
+            </div>
+            <div class="pose">
+              <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="18" fill="#d9f2e6"/><circle cx="26" cy="22" r="6" fill="#e8789b"/><path d="M26 30v12h16" stroke="#1f6b4a" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Сидя
+            </div>
+          </div>
+        </div></div>
+      </div>
+    </div>
+
+    <div class="acc">
+      <button class="acc-head" aria-expanded="false" aria-controls="acc16-tips">
+        <span class="ic" style="background:var(--sky)" aria-hidden="true">💡</span>
+        Практические советы
+        <span class="chev" aria-hidden="true">▾</span>
+      </button>
+      <div class="acc-body" id="acc16-tips">
+        <div class="acc-inner"><div class="acc-pad">
+          <div class="tips">
+            <ul>
+              <li>Выбирайте позы без давления на живот</li>
+              <li>При дискомфорте лучше остановиться</li>
+              <li>Небольшие мажущие выделения после секса бывают из-за чувствительности шейки матки, но сообщите о них врачу</li>
+              <li>При риске инфекций используйте презерватив</li>
+              <li>Сниженное желание в первом триместре нормально (токсикоз, усталость); во втором триместре у многих оно возвращается</li>
+              <li>После 20 недель избегайте длительного лежания на спине — растущая матка может сдавливать нижнюю полую вену и вызывать головокружение</li>
+            </ul>
+          </div>
+        </div></div>
+      </div>
+    </div>
+
+    <div class="acc">
+      <button class="acc-head" aria-expanded="false" aria-controls="acc16-habits">
+        <span class="ic" style="background:var(--good-bg)" aria-hidden="true">🥗</span>
+        Здоровые привычки
+        <span class="chev" aria-hidden="true">▾</span>
+      </button>
+      <div class="acc-body" id="acc16-habits">
+        <div class="acc-inner"><div class="acc-pad">
+          <div class="habit">
+            <div class="he" aria-hidden="true">🍽️</div>
+            <div>
+              <h4>Правильное питание</h4>
+              <p>Во втором триместре потребность в калориях растёт умеренно (+300–350 ккал/день).</p>
+              <ul>
+                <li>Больше белка: рыба, яйца, мясо, творог, бобовые</li>
+                <li>Железо: красное мясо, гречка, печень — по назначению врача</li>
+                <li>Кальций: молочные продукты, кунжут, зелень</li>
+                <li>Овощи и фрукты — каждый день, клетчатка от запоров</li>
+                <li>Ограничьте соль — меньше отёков</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="habit">
+            <div class="he" aria-hidden="true">💧</div>
+            <div>
+              <h4>Вода и напитки</h4>
+              <p>Пейте 1,5–2 л воды в день. При отёках не ограничивайте воду без совета врача.</p>
+              <ul>
+                <li>Уберите сладкие напитки и энергетики</li>
+                <li>Кофеин — не более 200 мг/сут (≈1–2 чашки кофе)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="sleep">
+            <h4>😴 Как правильно спать</h4>
+            <div class="srow"><span class="se" aria-hidden="true">🛏️</span><p>Спите <b>7–9 часов</b>, ложитесь и вставайте в одно и то же время.</p></div>
+            <div class="srow"><span class="se" aria-hidden="true">🛌</span><p>Оптимально — <b>на левом боку</b>: улучшает кровоток и снижает давление матки на вены. <b>На спине спать не рекомендуется</b>.</p></div>
+            <div class="srow"><span class="se" aria-hidden="true">🧸</span><p>Подушка <b>между коленями</b> и под живот — разгружает поясницу и таз.</p></div>
+            <div class="srow"><span class="se" aria-hidden="true">🌙</span><p>За час до сна — без экранов и кофеина, проветрите комнату, приглушите свет.</p></div>
+            <div class="srow"><span class="se" aria-hidden="true">🦵</span><p>При судорогах в ногах — потяните носок на себя, проверьте магний/кальций с врачом.</p></div>
+            <div class="srow"><span class="se" aria-hidden="true">🚻</span><p>Ночные подъёмы в туалет — норма; не пейте много перед сном.</p></div>
+          </div>
+
+          <h3 class="sec" style="display:block;margin-top:14px;font-size:1rem">🍎 Тарелка здоровья</h3>
+          <div class="plate">
+            <div><b>½ тарелки</b>Овощи и зелень</div>
+            <div><b>¼ тарелки</b>Белок: рыба, мясо, яйца, бобовые</div>
+            <div><b>¼ тарелки</b>Сложные углеводы: гречка, рис, цельные злаки</div>
+            <div><b>+</b>Фрукт, ложка растительного масла, стакан воды</div>
+          </div>
+        </div></div>
+      </div>
+    </div>
+
+    <!-- Витамины и анализы (16–20) -->
+    <div class="acc">
+      <button class="acc-head" aria-expanded="false" aria-controls="acc16-vit">
+        <span class="ic" style="background:var(--mint)" aria-hidden="true">💊</span>
+        Витамины и анализы
+        <span class="chev" aria-hidden="true">▾</span>
+      </button>
+      <div class="acc-body" id="acc16-vit">
+        <div class="acc-inner"><div class="acc-pad">
+          <div class="vit">
+            <div><b>Фолиевая кислота</b><small>По назначению врача, часто до конца 1-го триместра</small></div>
+            <div><b>Витамин D</b><small>Обычно 400–1000 МЕ/сут</small></div>
+            <div><b>Железо</b><small>По результатам ОАК — часто проверяют на 16–20 неделе</small></div>
+            <div><b>Кальций</b><small>Для костей малыша; часто вместе с витамином D</small></div>
+            <div><b>Йод</b><small>150–200 мкг/сут, если нет противопоказаний</small></div>
+            <div><b>DHA (омега-3)</b><small>200–300 мг/сут — для развития мозга и зрения</small></div>
+          </div>
+
+          <div class="tests" data-key="tests-week16">
+            <div class="tests-head">
+              <h4>Плановые анализы на 16–20 неделе</h4>
+              <span class="prog" data-prog>0 / 0</span>
+            </div>
+            <div class="prog-bar" aria-hidden="true"><i data-bar></i></div>
+            <ul class="test-list">
+              <li><input type="checkbox" id="t16-1"><label for="t16-1">Второй скрининг (16–20 недель): УЗИ + биохимия (АФП, ХГЧ, эстриол)</label></li>
+              <li><input type="checkbox" id="t16-2"><label for="t16-2">Общий анализ крови, общий анализ мочи</label></li>
+              <li><input type="checkbox" id="t16-3"><label for="t16-3">Глюкоза крови (по показаниям — ГТТ)</label></li>
+              <li><input type="checkbox" id="t16-4"><label for="t16-4">Цервикометрия — длина шейки матки по УЗИ</label></li>
+              <li><input type="checkbox" id="t16-5"><label for="t16-5">Контроль ТТГ, ферритина, витамина D — по назначению</label></li>
+              <li><input type="checkbox" id="t16-6"><label for="t16-6">Мазок на флору, при необходимости — на инфекции</label></li>
+            </ul>
+            <button class="reset" type="button" data-reset>Сбросить отметки</button>
+          </div>
+        </div></div>
+      </div>
+    </div>
+
+    <div class="acc">
+      <button class="acc-head" aria-expanded="true" aria-controls="acc16-call">
+        <span class="ic" style="background:var(--red-bg)" aria-hidden="true">📞</span>
+        Когда звонить врачу
+        <span class="chev" aria-hidden="true">▾</span>
+      </button>
+      <div class="acc-body" id="acc16-call">
+        <div class="acc-inner"><div class="acc-pad">
+          <div class="call">
+            <div class="level green">
+              <span class="le" aria-hidden="true">🟢</span>
+              <div>
+                <b>Плановый вопрос</b>
+                <ul>
+                  <li>Расшифровка второго скрининга, витамины</li>
+                  <li>Изжога, запоры, боли в спине</li>
+                  <li>Вопросы про сон, позы, движение</li>
+                </ul>
+              </div>
+            </div>
+            <div class="level yellow">
+              <span class="le" aria-hidden="true">🟡</span>
+              <div>
+                <b>Срочно в течение дня</b>
+                <ul>
+                  <li>Температура ≥ 37,5 °C</li>
+                  <li>Сильная рвота, обезвоживание</li>
+                  <li>Боли при мочеиспускании</li>
+                  <li>Зуд, жжение, необычные выделения</li>
+                  <li>Отёки лица или рук, резкое повышение давления</li>
+                  <li>Судороги в ногах, сильная слабость</li>
+                </ul>
+              </div>
+            </div>
+            <div class="level red">
+              <span class="le" aria-hidden="true">🔴</span>
+              <div>
+                <b>Скорая помощь</b>
+                <ul>
+                  <li>Кровотечение из влагалища</li>
+                  <li>Резкая боль внизу живота, тонус матки</li>
+                  <li>Подтекание или излитие вод</li>
+                  <li>Сильная головная боль с нарушением зрения</li>
+                  <li>Потеря сознания, судороги</li>
+                </ul>
+              </div>
+            </div>
+            <div class="phones">
+              <b>Телефоны:</b> приёмное отделение — <b>___</b>, скорая — <b>103</b>, врач — <b>___</b>
+            </div>
+          </div>
+        </div></div>
+      </div>
+    </div>
+
+    <div class="urgent" role="alert">
+      <div class="big" aria-hidden="true">🚑</div>
+      <div><b>Срочно к врачу</b>Боль, кровь или жидкие выделения из влагалища</div>
+    </div>
+
+    <p class="foot">Материал справочный и не заменяет консультацию врача, ведущего вашу беременность. 🌷</p>
+  </section>
+
+</div>
+
+<script>
+  // ===== Живые часы =====
+  (function () {
+    const el = document.getElementById('clock');
+    function tick() {
+      const now = new Date();
+      const opts = { day: '2-digit', month: '2-digit', year: 'numeric',
+                     hour: '2-digit', minute: '2-digit', second: '2-digit' };
+      el.textContent = now.toLocaleString('ru-RU', opts);
+    }
+    tick();
+    setInterval(tick, 1000);
+  })();
+
+  // ===== Аккордеоны =====
+  (function () {
+    document.querySelectorAll('.acc-head').forEach(head => {
+      head.addEventListener('click', () => {
+        const open = head.getAttribute('aria-expanded') === 'true';
+        head.setAttribute('aria-expanded', open ? 'false' : 'true');
+      });
+    });
+  })();
+
+  // ===== Чекбоксы анализов + сохранение в localStorage =====
+  (function () {
+    document.querySelectorAll('.tests').forEach(box => {
+      const key = box.getAttribute('data-key');
+      const inputs = box.querySelectorAll('input[type="checkbox"]');
+      const prog = box.querySelector('[data-prog]');
+      const bar = box.querySelector('[data-bar]');
+      const reset = box.querySelector('[data-reset]');
+
+      function save() {
+        const state = {};
+        inputs.forEach(i => { state[i.id] = i.checked; });
+        try { localStorage.setItem(key, JSON.stringify(state)); } catch (e) {}
+      }
+
+      function update() {
+        let done = 0;
+        inputs.forEach(i => {
+          const li = i.closest('li');
+          if (li) li.classList.toggle('done', i.checked);
+          if (i.checked) done++;
+        });
+        prog.textContent = done + ' / ' + inputs.length;
+        bar.style.width = (inputs.length ? (done / inputs.length * 100) : 0) + '%';
+        save();
+      }
+
+      // restore
+      try {
+        const saved = JSON.parse(localStorage.getItem(key) || '{}');
+        inputs.forEach(i => { if (saved[i.id]) i.checked = true; });
+      } catch (e) {}
+
+      inputs.forEach(i => i.addEventListener('change', update));
+      if (reset) reset.addEventListener('click', () => {
+        inputs.forEach(i => { i.checked = false; });
+        update();
+      });
+      update();
+    });
+  })();
+
+  // ===== Переключение страниц-недель + хэш =====
+  (function () {
+    const tabs = Array.from(document.querySelectorAll('.tab'));
+    const pages = {
+      'tab-week12': document.getElementById('week12'),
+      'tab-week16': document.getElementById('week16')
+    };
+
+    function activate(tab, updateHash) {
+      tabs.forEach(t => {
+        const on = t === tab;
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+        t.tabIndex = on ? 0 : -1;
+        const page = pages[t.id];
+        if (page) page.classList.toggle('active', on);
+      });
+      if (updateHash) {
+        const id = tab.id === 'tab-week12' ? 'week12' : 'week16';
+        history.replaceState(null, '', '#' + id);
+      }
+    }
+
+    function tabFromHash() {
+      const h = location.hash.replace('#', '');
+      if (h === 'week16') return document.getElementById('tab-week16');
+      return document.getElementById('tab-week12');
+    }
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => activate(tab, true));
+      tab.addEventListener('keydown', e => {
+        const i = tabs.indexOf(tab);
+        if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+          e.preventDefault();
+          const next = tabs[(i + (e.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length];
+          next.focus(); activate(next, true);
+        }
+      });
+    });
+
+    activate(tabFromHash(), false);
+    window.addEventListener('hashchange', () => activate(tabFromHash(), false));
+  })();
+</script>
+</body>
+</html>
