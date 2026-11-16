@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: pregnancy-memo
+    runtime: docker
+    plan: free
+    region: frankfurt          # ближе к РФ/ЕС; можно oregon, ohio, singapore
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /healthz
+    autoDeploy: true
+    envVars:
+      - key: PORT
+        value: 8080
